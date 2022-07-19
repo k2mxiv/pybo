@@ -39,7 +39,6 @@ def answer_modify(request, answer_id) :
             return redirect('pybo:detail', question_id = answer.question.id) #Answer 테이블의 question_id 컬럼 값은 Answer 에 새로 추가할놈과 연동된 question 테이블의 id 값이란 소리
     else :
         form = AnswerForm(instance = answer)
-    print("엔서퀘스쳔아이디", answer.question.id, answer.question_id)
     context = {'answer' : answer, 'form' : form}
     return render(request, 'pybo/answer_form.html', context)
 

@@ -30,12 +30,10 @@ def index(request) :
     paginator = Paginator(question_list, 10)#1페이지에 10개씩
     page_obj = paginator.get_page(page)
     context = {'question_list' : page_obj, 'page' : page, 'kw' : kw, 'so' : so}
-    print("야이야 내나이가 어때서", request)
     return render(request, 'pybo/question_list.html', context)
 
 def detail(request, question_id) :
     question = get_object_or_404(Question, pk=question_id)
     context = {'question': question}
-    print("야이야 내나이가 어때서", request, question_id, question)
     return render(request, 'pybo/question_detail.html', context)
 
