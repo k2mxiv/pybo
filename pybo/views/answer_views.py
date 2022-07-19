@@ -16,7 +16,6 @@ def answer_create(request, question_id) :
             answer.create_date = timezone.now()
             answer.question = question
             answer.save()
-            print('resolve', resolve_url('pybo:detail', question.id),'테스트 입니다.', '{}#answer_{}'.format('첫', '둘'))
             return redirect('{}#answer_{}'.format(resolve_url('pybo:detail', question_id = question.id), answer.id))
     else :
         form = AnswerForm()
