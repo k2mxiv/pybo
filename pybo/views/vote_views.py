@@ -19,5 +19,4 @@ def vote_answer(request, answer_id) :
         messages.error(request, '본인의 댓글은 추천할 수 없습니다!')
     else :
         answer.voter.add(request.user)
-    print("내가 테스트다", answer, ";", answer.question, ";", answer.id, ";", answer.question.id)
     return redirect('pybo:detail', question_id = answer.question.id)
