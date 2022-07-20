@@ -8,6 +8,7 @@ def index(request) :
     pybo 모델 출력
     """
     #입력 인자
+    3/0
     page = request.GET.get('page', '1')
     kw = request.GET.get('kw', '')
     so = request.GET.get('so', 'recent')
@@ -37,3 +38,6 @@ def detail(request, question_id) :
     context = {'question': question}
     return render(request, 'pybo/question_detail.html', context)
 
+def test(request, exception) :
+    img = open("C:\projects\mysite\templates\mss.jpg", mode = "r")
+    return img
